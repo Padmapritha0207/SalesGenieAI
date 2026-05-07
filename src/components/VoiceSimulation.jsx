@@ -101,7 +101,6 @@ const VoiceSimulation = () => {
 
     // Map language name to BCP-47 locale
     const langCode = (language === 'Hindi' || language === 'Hinglish') ? 'hi-IN' : 'en-IN';
-    utterance.lang = langCode;
 
     // Pick the best available female voice
     const allVoices = window.speechSynthesis.getVoices();
@@ -193,7 +192,7 @@ const VoiceSimulation = () => {
       recognition.continuous = false;
       recognition.interimResults = false;
       // Map language name → locale for speech recognition
-      const recogLocale = activeCall?.language === 'Hindi' || activeCall?.language === 'Hinglish' ? 'hi-IN' : 'en-IN';
+      const recogLocale = 'en-IN';
       recognition.lang = recogLocale;
 
       recognition.onstart = () => {
