@@ -16,8 +16,7 @@ except ImportError:
 
 load_dotenv(override=True)
 
-app = Flask(__name__, static_folder='../frontend', static_url_path='/')
-CORS(app)
+app = Flask(__name__, static_folder='../../dist', static_url_path='/')
 
 # Configure Gemini
 api_key = os.getenv("GEMINI_API_KEY")
